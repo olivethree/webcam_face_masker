@@ -2,4 +2,5 @@
 /FaceMaskerApp/
 /config/
 src/*.jpg
+src/facemasker_ui_tests.py
 setup.py
