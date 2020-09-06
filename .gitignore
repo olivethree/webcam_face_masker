@@ -5,4 +5,5 @@ data/shape_predictor_68_face_landmarks.dat
 tests/facemasker_ui_tests.py
 src/*.jpg
 src/__pycache__/*
+src/shape_predictor_68_face_landmarks.dat
 setup.py
