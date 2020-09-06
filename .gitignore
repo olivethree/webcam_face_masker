@@ -1,6 +1,8 @@
 /tests/
 /FaceMaskerApp/
 /config/
+data/shape_predictor_68_face_landmarks.dat
+tests/facemasker_ui_tests.py
 src/*.jpg
-src/facemasker_ui_tests.py
+src/__pycache__.py
 setup.py

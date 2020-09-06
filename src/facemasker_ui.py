@@ -46,7 +46,6 @@ class App:
 
         self.window.mainloop()
 
-
     def face_mask(self, filepath=os.path.abspath("../data/img/facemask.png")):
         mask_img = cv2.imread(filepath)
         return mask_img
@@ -159,7 +158,6 @@ class App:
 
                 return cv2image
 
-
     def snapshot(self):
         # Get a masked face frame from the video source
         masked_frame = self.mask_face()
@@ -169,15 +167,12 @@ class App:
             cv2.cvtColor(masked_frame, cv2.COLOR_RGB2BGR),
         )
 
-
-
     def update(self):
         # Get a masked frame from the video source
         maskedface = self.mask_face()
         self.photo = PIL.ImageTk.PhotoImage(image=PIL.Image.fromarray(maskedface))
         self.canvas.create_image(0, 0, image=self.photo, anchor=tkinter.NW)
         self.window.after(self.delay, self.update)
-
 
 
 class MyVideoCapture:
@@ -209,4 +204,4 @@ class MyVideoCapture:
 
 
 # Run app
-App()
+#App()

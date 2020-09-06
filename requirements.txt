@@ -10,6 +10,7 @@ ca-certificates=2020.7.22=0
 certifi=2020.6.20=py37_0
 click=7.1.2=py_0
 dlib=19.21.0=py37he05b8f6_0
+freetype=2.10.2=hd328e21_0
 future=0.18.2=py37_1
 hdf5=1.8.20=hac2f561_1
 icc_rt=2019.0.0=h0cc432a_1
@@ -28,10 +29,12 @@ mkl_random=1.1.1=py37h47e9c7a_0
 mypy_extensions=0.4.3=py37_0
 numpy=1.19.1=py37h5510c5b_0
 numpy-base=1.19.1=py37ha3acd2a_0
+olefile=0.46=py37_0
 opencv=3.4.2=py37h40b0b35_0
 openssl=1.1.1g=he774522_1
 pathspec=0.7.0=py_0
 pefile=2019.4.18=py_0
+pillow=7.2.0=py37hcc1f983_0
 pip=20.2.2=py37_0
 py-opencv=3.4.2=py37hc319ecb_0
 pycryptodome=3.8.2=py37he774522_0
