@@ -1,5 +1,9 @@
+import bz2
+import os
+import shutil
 import time
 import tkinter
+import urllib.request
 from math import hypot
 from tkinter import *
 
@@ -8,7 +12,6 @@ import PIL.ImageTk
 import cv2
 import dlib
 import numpy as np
-import os
 
 
 class App:
@@ -46,6 +49,48 @@ class App:
 
         self.window.mainloop()
 
+    def landmark_predictor(self):
+        if os.path.exists(os.path.abspath("../data/shape_predictor_68_face_landmarks.dat")):
+            predictor = dlib.shape_predictor(
+                os.path.abspath("../data/shape_predictor_68_face_landmarks.dat")
+            )
+            return predictor
+
+        else:
+            print("Downloading necessary files to data folder...")
+            filename = 'shape_predictor_68_face_landmarks.dat'
+            req = urllib.request.urlopen('http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2')
+
+            CHUNK = 16 * 1024
+            decompressor = bz2.BZ2Decompressor()
+            with open(filename, 'wb') as fp:
+                while True:
+                    chunk = req.read(CHUNK)
+                    if not chunk:
+                        break
+                    fp.write(decompressor.decompress(chunk))
+            req.close()
+            print("Download complete!")
+
+            source = 'shape_predictor_68_face_landmarks.dat'
+            target = '../data/'
+
+            assert not os.path.isabs(source)
+
+            # adding exception handling
+            try:
+                shutil.copy(source, target)
+                predictor = dlib.shape_predictor(
+                    os.path.abspath("../data/shape_predictor_68_face_landmarks.dat")
+                )
+                return predictor
+
+            except IOError as e:
+                print("Unable to copy file. %s" % e)
+            except:
+                print("Unexpected error:", sys.exc_info())
+
+
     def face_mask(self, filepath=os.path.abspath("../data/img/facemask.png")):
         mask_img = cv2.imread(filepath)
         return mask_img
@@ -56,9 +101,10 @@ class App:
 
         # Load dlib's face detector (HOG-based) and create facial landmark predictor based on pre-trained data file
         detector = dlib.get_frontal_face_detector()
-        predictor = dlib.shape_predictor(
-            os.path.abspath("../data/shape_predictor_68_face_landmarks.dat")
-        )
+        # predictor = dlib.shape_predictor(
+        #     os.path.abspath("../data/shape_predictor_68_face_landmarks.dat")
+        # )
+        predictor = self.landmark_predictor()
 
         # Note: adding "while self.vid" loop below prevents app freezing when faces go out of boundaries
         while self.vid:
