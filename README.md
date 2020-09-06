@@ -14,6 +14,10 @@ To setup the Python environment please use the **environment.yml** file and run 
 ### Running Face Masker
 For now, the only way to run the Face Masker app is directly from the "[PROJECT_DIRECTORY]/src/**facemasker_main.py**" script.
 
+The app requires dlib's face landmark predictor file (**shape_predictor_68_face_landmarks.dat**) to properly work. 
+In the first run, it will automatically download this file and save it in the *data* folder, so it will take some time to launch the app window.
+Once the file is downloaded and saved to your disk (in the data folder of the project) the app will initiate immediately on the following runs. 
+
 **Note**: 
 The application initiates the system's webcam. 
 This may trigger some actions from your antivirus software, such as requests for camera access.
