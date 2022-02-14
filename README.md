@@ -27,6 +27,3 @@ The app works entirely in your local machine, and as you may confirm in the sour
 
 This was developed during my free time as a hobby project.
 There are some limitations in version 1.0 that I am still trying to overcome, especially the low frame rate.
-Next, I'm planning on packaging the app and distribute it with an installer (possibly using the Rust-based PyOxidizer, since pyinstaller and cx_Freeze failed to accomplish this). 
-
-- **Manuel Oliveira** (manueljbo@gmail.com)
