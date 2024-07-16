@@ -9,10 +9,9 @@ Note: project developed in Python 3.7
 
 ### Environment setup
 To setup the Python environment please use the **environment.yml** file and run the following in your terminal: **conda env create -f environment.yml**
-*Note*: this approach should resolve the issues commonly associated with projects using libraries installed via "conda" and "pip" (such as this one).
 
 ### Running Face Masker
-For now, the only way to run the Face Masker app is directly from the "[PROJECT_DIRECTORY]/src/**facemasker_main.py**" script.
+You can run the Face Masker app from the "*facemasker_main.py**" script.
 
 The app requires dlib's face landmark predictor file (**shape_predictor_68_face_landmarks.dat**) to properly work. 
 In the first run, it will automatically download this file and save it in the *data* folder, so it will take some time to launch the app window.
