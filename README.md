@@ -1,4 +1,4 @@
-# Webcam Face Masker (under development)
+# Webcam Face Masker
 
 This application applies a facial mask to any faces captured by the webcam. 
 In addition, it includes a "Save snapshot" feature that captures the current frame and saves it as a JPEG file.
