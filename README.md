@@ -5,6 +5,8 @@ In addition, it includes a "Save snapshot" feature that captures the current fra
 
 Note: project developed in Python 3.7
 
+UPDATE (July 2024): This project is not active for a couple of years now. 
+
 ## Instructions
 
 ### Environment setup
